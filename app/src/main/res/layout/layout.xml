@@ -4,15 +4,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:weightSum="1">
+    android:weightSum="1"
+    android:background="@color/colorBlack">
 
     <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar2"
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme" />
+        android:popupTheme="@style/AppTheme.PopupOverlay" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -32,6 +32,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="RED"
+                android:textSize="20sp"
+                android:textStyle="bold|italic"
+                android:textColor="@color/colorRed"
                 android:onClick="increaseValueRed"/>
         </LinearLayout>
 
@@ -45,8 +48,11 @@
                 android:id="@+id/button4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="increaseValueGreen"
+                android:textColor="@color/colorGreen"
                 android:text="GREEN"
-                android:onClick="increaseValueGreen"/>
+                android:textSize="20sp"
+                android:textStyle="bold|italic"/>
         </LinearLayout>
 
         <LinearLayout
@@ -59,7 +65,10 @@
                 android:id="@+id/button5"
                 android:layout_width="135dp"
                 android:layout_height="wrap_content"
+                android:textColor="@color/colorBlue"
                 android:text="BLUE"
+                android:textSize="20sp"
+                android:textStyle="bold|italic"
                 android:onClick="increaseValueBlue"/>
         </LinearLayout>
     </LinearLayout>
@@ -80,7 +89,12 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="text"
-                android:text="Red" />
+                android:selectAllOnFocus="false"
+                android:singleLine="true"
+                android:text="Red"
+                android:textColor="@color/colorRed"
+                android:textSize="20sp"
+                android:textStyle="bold|italic" />
 
             <EditText
                 android:id="@+id/value_green"
@@ -88,7 +102,11 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="text"
-                android:text="Green" />
+                android:singleLine="true"
+                android:text="Green"
+                android:textColor="@color/colorGreen"
+                android:textSize="20sp"
+                android:textStyle="bold|italic" />
 
             <EditText
                 android:id="@+id/value_blue"
@@ -96,7 +114,11 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="text"
-                android:text="Blue" />
+                android:singleLine="true"
+                android:text="Blue"
+                android:textColor="@color/colorBlue"
+                android:textSize="20sp"
+                android:textStyle="bold|italic" />
 
         </LinearLayout>
 
@@ -117,5 +139,14 @@
         </LinearLayout>
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="REFRESH"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
+        android:onClick="refresh"/>
 
 </LinearLayout>
