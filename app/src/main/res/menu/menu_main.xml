@@ -4,7 +4,23 @@
     tools:context="com.example.shwethaskumar.deltaapp.MainActivity">
     <item
         android:id="@+id/action_settings"
+        android:enabled="true"
         android:orderInCategory="100"
-        android:title="@string/action_settings"
-        app:showAsAction="never" />
+        android:title="Menu"
+        android:visible="true">
+        <menu>
+            <item
+                android:title="Save"
+                android:id="@+id/menu_save"
+                android:icon="@drawable/save_icon" />
+            <item
+                android:title="Load"
+                android:id="@+id/menu_load"
+                android:icon="@drawable/load_icon" />
+            <item
+                android:title="New game"
+                android:id="@+id/menu_new_game"
+                android:icon="@drawable/new_game_icon"/>
+        </menu>
+    </item>
 </menu>
