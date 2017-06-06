@@ -17,136 +17,96 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="158dp"
-        android:layout_weight="0.95"
+        android:layout_weight="0.75"
         android:orientation="horizontal"
+        android:paddingTop="150dp"
         android:weightSum="1">
 
-        <LinearLayout
-            android:layout_width="114dp"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:paddingTop="175dp">
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="122dp"
+            android:layout_height="93dp"
+            android:onClick="increaseValueRed"
+            android:text="RED"
+            android:textColor="@color/colorRed"
+            android:textSize="20sp"
+            android:textStyle="bold|italic" />
 
-            <Button
-                android:id="@+id/button3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="RED"
-                android:textSize="20sp"
-                android:textStyle="bold|italic"
-                android:textColor="@color/colorRed"
-                android:onClick="increaseValueRed"/>
-        </LinearLayout>
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="126dp"
+            android:layout_height="92dp"
+            android:onClick="increaseValueGreen"
+            android:text="GREEN"
+            android:textColor="@color/colorGreen"
+            android:textSize="20sp"
+            android:textStyle="bold|italic"
+            android:layout_weight="0.50" />
 
-        <LinearLayout
-            android:layout_width="134dp"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:paddingTop="175dp">
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="126dp"
+            android:layout_height="94dp"
+            android:onClick="increaseValueBlue"
+            android:text="BLUE"
+            android:textColor="@color/colorBlue"
+            android:textSize="20sp"
+            android:textStyle="bold|italic"
+            android:layout_weight="0.67" />
 
-            <Button
-                android:id="@+id/button4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:onClick="increaseValueGreen"
-                android:textColor="@color/colorGreen"
-                android:text="GREEN"
-                android:textSize="20sp"
-                android:textStyle="bold|italic"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="228dp"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:paddingTop="175dp">
-
-            <Button
-                android:id="@+id/button5"
-                android:layout_width="135dp"
-                android:layout_height="wrap_content"
-                android:textColor="@color/colorBlue"
-                android:text="BLUE"
-                android:textSize="20sp"
-                android:textStyle="bold|italic"
-                android:onClick="increaseValueBlue"/>
-        </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="113dp"
-        android:layout_height="235dp"
+        android:layout_width="wrap_content"
+        android:layout_height="181dp"
         android:orientation="horizontal">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="235dp"
-            android:orientation="vertical">
+        <TextView
+            android:id="@+id/value_red"
+            android:layout_width="126dp"
+            android:layout_height="39dp"
+            android:ems="10"
+            android:inputType="text"
+            android:selectAllOnFocus="false"
+            android:singleLine="true"
+            android:text="Red"
+            android:textColor="@color/colorRed"
+            android:textSize="20sp"
+            android:textStyle="bold|italic" />
 
-            <EditText
-                android:id="@+id/value_red"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="text"
-                android:selectAllOnFocus="false"
-                android:singleLine="true"
-                android:text="Red"
-                android:textColor="@color/colorRed"
-                android:textSize="20sp"
-                android:textStyle="bold|italic" />
+        <TextView
+            android:id="@+id/value_green"
+            android:layout_width="126dp"
+            android:layout_height="39dp"
+            android:ems="10"
+            android:inputType="text"
+            android:singleLine="true"
+            android:text="Green"
+            android:textColor="@color/colorGreen"
+            android:textSize="20sp"
+            android:textStyle="bold|italic" />
 
-            <EditText
-                android:id="@+id/value_green"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="text"
-                android:singleLine="true"
-                android:text="Green"
-                android:textColor="@color/colorGreen"
-                android:textSize="20sp"
-                android:textStyle="bold|italic" />
-
-            <EditText
-                android:id="@+id/value_blue"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="text"
-                android:singleLine="true"
-                android:text="Blue"
-                android:textColor="@color/colorBlue"
-                android:textSize="20sp"
-                android:textStyle="bold|italic" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="138dp"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:weightSum="1">
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="134dp"
-            android:layout_height="235dp"
-            android:orientation="vertical"
-            android:weightSum="1">
-
-        </LinearLayout>
+        <TextView
+            android:id="@+id/value_blue"
+            android:layout_width="126dp"
+            android:layout_height="39dp"
+            android:ems="10"
+            android:inputType="text"
+            android:singleLine="true"
+            android:text="Blue"
+            android:textColor="@color/colorBlue"
+            android:textSize="20sp"
+            android:textStyle="bold|italic" />
 
     </LinearLayout>
 
     <Button
         android:id="@+id/button"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         android:text="REFRESH"
         android:textSize="20sp"
         android:textStyle="bold|italic"
-        android:onClick="refresh"/>
+        android:onClick="refresh" />
 
 </LinearLayout>

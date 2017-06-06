@@ -1,5 +1,6 @@
 package com.example.shwethaskumar.deltaapp;
 
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -11,6 +12,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     int value_r=0,value_g=0,value_b=0;
@@ -29,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         changingValue_b=(TextView) findViewById(R.id.value_blue);
         changingValue_b.setText(String.valueOf(value_b));
         setSupportActionBar(toolbar);
+        load_game();
             }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -45,12 +48,51 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
+      /* switch(id){
+           case R.id.menu_save:
+               SharedPreferences saveGame=getSharedPreferences("save",MODE_PRIVATE);
+               SharedPreferences.Editor editor1=saveGame.edit();
+               SharedPreferences.Editor editor2=saveGame.edit();
+               SharedPreferences.Editor editor3=saveGame.edit();
+               editor1.putInt("SavedValue1",value_r);
+               editor2.putInt("SavedValue2",value_g);
+               editor3.putInt("SavedValue3",value_b);
+               editor1.apply();
+               editor2.apply();
+               editor3.apply();
+               Toast.makeText(getApplicationContext(),"Saved game successfully", Toast.LENGTH_SHORT).show();
+               break;
+           case R.id.menu_load:
+               SharedPreferences loadGame=getSharedPreferences("save",MODE_PRIVATE);
+               value_r=loadGame.getInt("SavedValue1",0);
+               changingValue_r.setText(String.valueOf(value_r));
+               value_g=loadGame.getInt("SavedValue2",0);
+               changingValue_g.setText(String.valueOf(value_g));
+               value_b=loadGame.getInt("SavedValue3",0);
+               changingValue_b.setText(String.valueOf(value_b));
+               setColor();
+               Toast.makeText(getApplicationContext(),"Loaded game successfully", Toast.LENGTH_SHORT).show();
+               break;
+           case R.id.menu_new_game:
+               value_r=0;value_g=0;value_b=0;
+               changingValue_r.setText(String.valueOf(value_r));
+               changingValue_g.setText(String.valueOf(value_g));
+               changingValue_b.setText(String.valueOf(value_b));
+               setColor();
+               Toast.makeText(getApplicationContext(),"New game loaded successfully", Toast.LENGTH_SHORT).show();
+               break;
+       }*/
 
         return super.onOptionsItemSelected(item);
     }
+    public void refresh(View view)
+    {
+        value_r=0;value_g=0;value_b=0;
+        changingValue_r.setText(String.valueOf(value_r));
+        changingValue_g.setText(String.valueOf(value_g));
+        changingValue_b.setText(String.valueOf(value_b));
+        setColor();
+            }
     public void increaseValueRed(View view)
     {
         value_r=value_r+1;
@@ -58,6 +100,7 @@ public class MainActivity extends AppCompatActivity {
             value_r=0;
         changingValue_r.setText(String.valueOf(value_r));
         setColor();
+        save_game();
     }
 
     public void increaseValueGreen(View view)
@@ -67,6 +110,7 @@ public class MainActivity extends AppCompatActivity {
             value_g=0;
         changingValue_g.setText(String.valueOf(value_g));
         setColor();
+        save_game();
     }
     public void increaseValueBlue(View view)
     {
@@ -75,9 +119,36 @@ public class MainActivity extends AppCompatActivity {
             value_b=0;
         changingValue_b.setText(String.valueOf(value_b));
         setColor();
+        save_game();
     }
     public void setColor()
+
     {
         lineLay.setBackgroundColor(Color.rgb(value_r,value_g,value_b));
+    }
+    public void save_game()
+    {
+        SharedPreferences saveGame=getSharedPreferences("save",MODE_PRIVATE);
+        SharedPreferences.Editor editor1=saveGame.edit();
+        SharedPreferences.Editor editor2=saveGame.edit();
+        SharedPreferences.Editor editor3=saveGame.edit();
+        editor1.putInt("SavedValue1",value_r);
+        editor2.putInt("SavedValue2",value_g);
+        editor3.putInt("SavedValue3",value_b);
+        editor1.apply();
+        editor2.apply();
+        editor3.apply();
+    }
+    public void load_game()
+    {
+        SharedPreferences loadGame=getSharedPreferences("save",MODE_PRIVATE);
+        value_r=loadGame.getInt("SavedValue1",0);
+        changingValue_r.setText(String.valueOf(value_r));
+        value_g=loadGame.getInt("SavedValue2",0);
+        changingValue_g.setText(String.valueOf(value_g));
+        value_b=loadGame.getInt("SavedValue3",0);
+        changingValue_b.setText(String.valueOf(value_b));
+        setColor();
+
     }
 }
